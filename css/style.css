@@ -1,0 +1,249 @@
+/* RESET / CONFIGURAÇÕES GERAIS */
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(rgb(8, 8, 126), rgb(80, 33, 211), rgb(8, 8, 126));
+  min-height: 100vh;
+  padding-top: 90px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CABEÇALHO */
+.cabeca nav {
+  position: fixed;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(28, 53, 143, 0.4);
+  z-index: 1000;
+  padding: 30px 30px;
+}
+
+.cabeca nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+  height: 100%;
+}
+
+.cabeca nav ul li a {
+  position: relative;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.cabeca nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.cabeca nav ul li a:hover::after {
+  width: 100%;
+}
+
+.menu { transition: transform 0.18s ease; }
+.menu:hover { transform: scale(1.05); }
+
+
+/* SEÇÃO INÍCIO */
+.verProjetos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #273bd0;
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.verProjetos:hover {
+  background: linear-gradient(135deg, #0056b3, #0094cc);
+  transform: scale(1.05);
+}
+
+.inicio h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+.inicio p {
+  text-align: center;
+}
+
+a.botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 40px;
+  border-radius: 20px;
+  background-color: #273bd0;
+  height: 35px;
+  padding: 0 18px;
+  width: 100%;
+}
+
+
+
+/* PROJETOS / CARDS */
+.container-pai {
+  max-width: 1200px;
+  width: 95%;
+  margin: 50px auto 0 auto;
+}
+
+.container-pai h2 {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 80px auto 0;
+  gap: 70px;
+}
+
+.card {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 15px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+}
+
+.cards-container .card img:hover {
+  transform: scale(1.03);
+}
+
+.cards-container .card h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cards-container .card a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: #273bd0;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.container-pai a {
+  transition: transform 0.3s ease;
+}
+
+.container-pai a:hover {
+  transform: scale(1.1);
+}
+
+
+
+/* SOBRE */
+.sobre h2 {
+  background-color: #273bd0;
+  border-radius: 10px;
+  margin-top: 55px;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.sobre p {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
+.sobre p a {
+  color: white;
+}
+
+
+
+/* CONTATO / RODAPÉ */
+.contato h2 {
+  background-color: #273bd0;
+  border-radius: 10px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contato a {
+  white-space: nowrap;
+}
+
+
+.github,
+.linkedin,
+.gmail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  color: white;
+}
+
+.contato img {
+  max-width: 40px;
+}
+
+/* MÉDIA QUERIES */
+
+@media (max-width: 900px) {
+  /* ajustes para tablet - exemplo: reduzir gap do cards e do nav */
+  .cards-container { gap: 32px; }
+  .cabeca nav ul { gap: 24px; }
+  a.botao { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  /* ajustes para mobile - empilhar cards e tornar botões full-width */
+  .cards-container { flex-direction: column; align-items: center; gap: 18px; }
+  a.botao { width: 100%; display: block; }
+  .cabeca nav ul { display: none; } /* melhorar depois com um toggle JS */
+}
